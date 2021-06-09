@@ -1,0 +1,26 @@
+﻿[
+  {
+    "articul": "677",
+    "name": "Спрайт",
+    "summary": "шт",
+    "count": "10",
+    "shelf": 1,
+    "polka": "2"
+  },
+  {
+    "articul": "81",
+    "name": "Банан",
+    "summary": "кг",
+    "count": "2",
+    "shelf": 1,
+    "polka": "2"
+  },
+  {
+    "articul": "25",
+    "name": "Пирог",
+    "summary": "кг",
+    "count": "3",
+    "shelf": 1,
+    "polka": "2"
+  }
+]

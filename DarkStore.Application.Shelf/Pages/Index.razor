@@ -1,0 +1,58 @@
+﻿@page "/"
+
+
+
+
+<div class="row h-100 justify-content-center align-items-center" style="margin-top: 10%">
+    <div class="col-md-12" style="text-align: center;">
+    <img src="firstpage.png"/>
+        </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Посада виконавця</label>
+            <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                <option>Складувальник</option>
+                <option>Пикер</option>
+                <option>Кассир</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Зона роботи</label>
+            <select class="form-control form-control-lg" id="exampleFormControlSelect1">
+                <option>Зона 1</option>
+                <option>Зона 2</option>
+                <option>Зона 3</option>
+                <option>Зона 4</option>
+                <option>Зона 5</option>
+            </select>
+        </div>
+    </div>  
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Колір</label>
+            <select class="form-control form-control-lg" id="exampleFormControlSelect1" disabled>
+                <option>Червоний</option>
+                <option>Синій</option>
+                <option>Зелений</option>
+                <option>Жовтий</option>
+            </select>
+        </div>
+    </div>
+</div>
+<div class="row h-100 justify-content-center align-items-center">
+    <div class="col-md-12">
+        <a class="btn btn-primary btn-lg btn-block" href="selectzones">Розпочати</a>
+    </div>
+</div>
+
+
+@code {
+
+    public class Position
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
+}

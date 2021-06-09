@@ -1,0 +1,51 @@
+﻿@page "/orderdetails"
+@inject HttpClient Http
+@*<header>
+    <div class="toolbar">
+        <a class="toolbar-item" href="orders" style="text-decoration: none">◀ Назад</a>
+    </div>
+</header>*@
+<br/>
+
+<div class="row justify-content-between">
+    <div class="col-4">
+        <div style="width: inherit">Замовлення: <span class="dot"></span></div>
+    </div>
+    <div class="col-4"  style="text-align: right">
+        <div style="width: inherit">Кількість замовленнь: 21</div>
+    </div>
+</div>
+<br/>
+<OrderTable></OrderTable>
+@code {
+   public class CurrentUserInfoVM
+   {
+       public string UserId { get; set; }
+       public string UserName { get; set; }
+       public Index.Position? Position { get; set; }
+       public List<ZonesVM> ZonesVms { get; set; }
+
+       public CurrentUserInfoVM()
+       {
+           ZonesVms = new List<ZonesVM>();
+       }
+   }
+
+    public class ZonesVM
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public List<ColorVM> ZonesVms { get; set; }
+        public int OrdersCount { get; set; }
+        public ZonesVM()
+        {
+            ZonesVms = new List<ColorVM>();
+        }
+    }
+
+    public class ColorVM
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
+}

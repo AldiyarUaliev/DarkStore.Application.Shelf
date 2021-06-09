@@ -1,0 +1,19 @@
+﻿@page "/orders"
+@inject HttpClient Http
+<header>
+    <div class="toolbar">
+        <a class="toolbar-item" href="/" style="text-decoration: none">◀ Назад</a>
+    </div>
+</header>
+<br />
+<div class="row justify-content-between">
+    <div class="col-4">
+        <div style="width: inherit">Замовлення: зелене</div>
+    </div>
+    <div class="col-4" style="text-align: right">
+        <div style="width: inherit">Кількість замовленнь: 21</div>
+    </div>
+</div>
+
+<GetOrder></GetOrder>
+

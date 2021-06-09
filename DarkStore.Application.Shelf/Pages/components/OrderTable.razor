@@ -1,0 +1,90 @@
+﻿@inject HttpClient Http
+<br/>
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+
+    <table class="table table-bordered" style="background-color: white">
+        <thead>
+            <tr>
+                <th>Артикул</th>
+                <th>Назва</th>
+                <th>Од. вимір.</th>
+                <th>Кількість</th>
+                <th>Стелаж</th>
+                <th>Полка</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.articul</td>
+                    <td>@forecast.name</td>
+                    <td>@forecast.summary</td>
+                    <td>@forecast.count</td>
+                    <td>@forecast.shelf</td>
+                    <td>@forecast.polka</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <h3>Всього:</h3>
+    <table class="table table-bordered">
+        <tbody  style="background-color: white">
+       
+        <tr>
+            <td>Кількістьсть унікальних замовленнь:</td>
+            <td>009</td>
+        </tr>
+        <tr>
+            <td>К-сть товарів всього:</td>
+            <td>11</td>
+        </tr>
+        </tbody>
+    </table>
+    <br/>
+    <div class="row justify-content-between">
+        <div class="col-4">
+            <a class="btn btn-outline-warning btn-lg" href="selectzones" style="width: inherit">Відмова</a>
+        </div>
+        <div class="col-4">
+            <a class="btn btn-success btn-lg"  style="width: inherit; color: white; cursor: pointer;">Зібрано</a>
+        </div>
+    </div>
+
+}
+@code {
+    private WeatherForecast[] forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+    }
+
+    public class WeatherForecast
+    {
+        public string articul { get; set; }
+
+        public string name { get; set; }
+
+        public string summary { get; set; }
+        public string count { get; set; }
+        public string polka { get; set; }
+        public int shelf { get; set; }
+    }
+
+    public class Order
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string UnitName { get; set; }
+        public string RackName { get; set; }
+        public string ShelfName { get; set; }
+        public string Count { get; set; }
+    }
+}
