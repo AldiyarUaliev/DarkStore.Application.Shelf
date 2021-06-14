@@ -63,3 +63,13 @@ a, .btn-link {
     border-radius: 50%;
     display: inline-block;
 }
+@media screen and (min-device-width: 1200px) 
+and (max-device-width: 1600px) 
+{
+
+}
+@media screen and (min-device-width: 1600px) 
+and (max-device-width: 2600px) 
+{
+  
+}
